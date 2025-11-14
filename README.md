@@ -4,9 +4,9 @@
 
 ###  Keywords: global diabetes trends, diabetes statistics 2025, diabetes prevalence worldwide, Type 2 diabetes prevention, diabetes burden LMICs, diabetes economic cost, MENA diabetes rates, NCD health systems
 
+### Suggested URL slug: silent-rise-of-diabetes-data-insights
 
-
-## Introduction
+## Hook & Introduction
 
 Diabetes is silently reaching epidemic proportions worldwide, outpacing many health projections. In the last few decades, the number of people with diabetes has exploded, making it one of the fastest growing global health challenges.
 
@@ -22,30 +22,11 @@ Explanation: The global prevalence of diabetes has skyrocketed over the past 30 
 | 1990 | ~7% of adults | ~200 million | WHO 2024 |
 | 2022 | ~14% of adults | ~830 million | WHO 2024 |
 
-```python
-import matplotlib.pyplot as plt
+### 📊 Figure 1
 
-# Data from Table 1: Global diabetes prevalence over time
-years = [1990, 2022]
-prevalence_percent = [7, 14]  # approximate values, percent of adults
-people_millions = [200, 830]  # millions of adults with diabetes
+![Figure 1](figures/fig1_global_prevalence.png)
 
-fig, ax1 = plt.subplots()
-
-# Plot number of people with diabetes
-ax1.plot(years, people_millions, marker="o")
-ax1.set_xlabel("Year")
-ax1.set_ylabel("People with diabetes (millions)")
-
-# Second y-axis for prevalence
-ax2 = ax1.twinx()
-ax2.plot(years, prevalence_percent, marker="s", linestyle="--")
-ax2.set_ylabel("Prevalence (% of adults)")
-
-plt.title("Global Diabetes: Prevalence and Number of Adults with Diabetes")
-plt.tight_layout()
-plt.show()
-```
+> To regenerate this figure, run `python scripts/make_all_figures.py`.
 
 ### Takeaway for Health Professionals: For health professionals, this means diabetes is now twice as common as it was a generation ago – you are far more likely to encounter diabetic patients in any clinical setting. Health systems must recognize this surge and strengthen chronic disease programs, since the demand for diabetes care and prevention services has effectively doubled (or more) over 30 years.
 
@@ -64,32 +45,11 @@ Explanation: Diabetes has quietly become one of the most common health condition
 | Western Pacific (incl. China) | 215 million | ~11% | IDF 2025 Atlas |
 | Africa | 25 million | 5.0% (lowest region) | IDF 2025 Atlas |
 
-```python
-import matplotlib.pyplot as plt
-import numpy as np
+### 📊 Figure 2
 
-# Data from Table 2: Adults with diabetes by region (2024)
-regions = [
-    "Global", "Europe", "MENA",
-    "South-East Asia", "Western Pacific", "Africa"
-]
+![Figure 2](figures/fig2_region_burden.png)
 
-adults_millions = [589, 66, 85, 107, 215, 25]
-prevalence_percent = [11.1, 9.8, 17.6, 11.0, 11.0, 5.0]
-
-x = np.arange(len(regions))
-
-fig, ax1 = plt.subplots()
-
-ax1.bar(x, adults_millions)
-ax1.set_xticks(x)
-ax1.set_xticklabels(regions, rotation=45, ha="right")
-ax1.set_ylabel("Adults with diabetes (millions)")
-ax1.set_title("Adults with Diabetes and Prevalence by Region (2024)")
-
-plt.tight_layout()
-plt.show()
-```
+> To regenerate this figure, run `python scripts/make_all_figures.py`.
 
 ### Takeaway for Health Professionals: For health professionals, this prevalence means diabetes is part of “routine” now – roughly one in ten of your adult patients is likely to have diabetes. Every clinic, hospital, and community health program must be prepared to screen for and manage diabetes as a core element of care, because the condition is affecting broad swathes of the population.
 
@@ -106,22 +66,11 @@ Explanation: Not only is diabetes common now, but future projections show the bu
 | Of which: LMICs | ~692 million (81% of total) | — | Vast majority of 2050 cases | IDF / WB analysis |
 | High-Income countries | ~161 million (19% of total) | — | Smaller share of 2050 cases | IDF / WB analysis |
 
-```python
-import matplotlib.pyplot as plt
+### 📊 Figure 3
 
-# Data from Table 3: Projected adults with diabetes (global)
-years = [2024, 2050]
-adults_millions = [589, 853]
+![Figure 3](figures/fig3_projection.png)
 
-fig, ax = plt.subplots()
-ax.bar([str(y) for y in years], adults_millions)
-ax.set_xlabel("Year")
-ax.set_ylabel("Adults with diabetes (millions)")
-ax.set_title("Projected Global Adults with Diabetes (2024 vs 2050)")
-
-plt.tight_layout()
-plt.show()
-```
+> To regenerate this figure, run `python scripts/make_all_figures.py`.
 
 ### Takeaway for Health Professionals: For health professionals, this forecast means the peak of the diabetes burden is still ahead of us – unless strong preventive actions are taken. Clinics and health programs must prepare for even more diabetes patients in the future. Proactive measures now (community screening, lifestyle intervention programs, etc.) are vital to bending the curve of this projection and preventing our practices from becoming overwhelmed by diabetes cases in the coming decades.
 
@@ -136,27 +85,11 @@ Explanation: A striking aspect of the diabetes epidemic is how much of it lurks 
 | Adults with undiagnosed diabetes | ~252 million (worldwide) | Africa: ~73% of diabetes cases undiagnosed<br>MENA: ~33% undiagnosed<br>Global average: ~44% undiagnosed | IDF 2025 Atlas |
 | Proportion of diabetes cases undiagnosed | 43% globally | Africa: the highest (about 3 in 4)<br>Europe: the lowest (estimated ~1 in 4) | IDF 2025 Atlas; WHO 2022 estimates |
 
-```python
-import matplotlib.pyplot as plt
-import numpy as np
+### 📊 Figure 4
 
-# Data from Table 4: Undiagnosed diabetes
-categories = ["Global", "Africa", "Europe"]
-# Approximate proportion of diabetes cases undiagnosed
-proportion_percent = [43, 73, 25]
+![Figure 4](figures/fig4_undiagnosed.png)
 
-x = np.arange(len(categories))
-
-fig, ax = plt.subplots()
-ax.bar(x, proportion_percent)
-ax.set_xticks(x)
-ax.set_xticklabels(categories)
-ax.set_ylabel("Undiagnosed proportion (%)")
-ax.set_title("Share of Diabetes Cases that are Undiagnosed")
-
-plt.tight_layout()
-plt.show()
-```
+> To regenerate this figure, run `python scripts/make_all_figures.py`.
 
 ### Takeaway for Health Professionals: For health professionals, this means a silent reservoir of diabetes is likely in your community – nearly half of those with diabetes haven’t been diagnosed yet. Proactive screening and case-finding (especially in primary care and community settings) are crucial. Early diagnosis allows timely management to prevent complications, so clinicians and public health workers should push for routine blood glucose checks in at-risk populations and make sure “hidden” cases are brought to light.
 
@@ -172,19 +105,11 @@ Explanation: Beyond diagnosis, there is a concerning treatment gap in diabetes c
 | Proportion of diabetics not on treatment | >50% (globally, 2022) – more than half are untreated | WHO Key Facts 2024 |
 | Treatment coverage in LMICs vs HICs | Much lower in LMICs (lowest in low-income countries) – e.g. insulin often inaccessible; higher in HICs, but gaps remain | WHO 2024 (Treatment coverage lowest in LMICs) |
 
-```python
-import matplotlib.pyplot as plt
+### 📊 Figure 5
 
-# Data from Table 5: Treatment coverage (simplified)
-labels = ["On treatment", "Not on treatment"]
-values_percent = [50, 50]  # approx: about half treated, half untreated globally
+![Figure 5](figures/fig5_treatment_coverage.png)
 
-fig, ax = plt.subplots()
-ax.pie(values_percent, labels=labels, autopct="%1.0f%%")
-ax.set_title("Global Diabetes Treatment Coverage (Approximate)")
-
-plt.show()
-```
+> To regenerate this figure, run `python scripts/make_all_figures.py`.
 
 ### Takeaway for Health Professionals: For health professionals, this underscores the need not just to diagnose diabetes, but to ensure patients get on effective treatment and stay on it. Improving access to essential diabetes medications and education about adherence should be a priority. Clinicians, especially in primary care, must work to close this gap – by simplifying treatment protocols, addressing cost barriers, and following up with patients – so that a diagnosis of diabetes is promptly followed by proper management to control blood sugar.
 
@@ -202,32 +127,11 @@ Explanation: Diabetes is often thought of as a disease of affluent lifestyles, b
 | High-income countries | 11.1% | 73.7 million | High prevalence but smaller share of total | IDF / Lancet 2022 |
 | Global Total | ~10.5% (2021) | 537 million (2021) | 81% of cases in all LMICs combined | IDF 10th Atlas |
 
-```python
-import matplotlib.pyplot as plt
-import numpy as np
+### 📊 Figure 6
 
-# Data from Table 6: Diabetes by World Bank income group (2021)
-groups = ["Low income", "Lower-middle", "Upper-middle", "High income"]
-prevalence_percent = [5.5, 9.1, 11.1, 11.1]
-adults_millions = [20.9, 211.2, 279.2, 73.7]
+![Figure 6](figures/fig6_income_groups.png)
 
-x = np.arange(len(groups))
-width = 0.35
-
-fig, ax1 = plt.subplots()
-bars1 = ax1.bar(x - width/2, prevalence_percent, width, label="Prevalence (%)")
-ax1.set_ylabel("Prevalence (%)")
-ax1.set_xticks(x)
-ax1.set_xticklabels(groups, rotation=45, ha="right")
-
-ax2 = ax1.twinx()
-bars2 = ax2.bar(x + width/2, adults_millions, width, label="Adults (millions)")
-ax2.set_ylabel("Adults with diabetes (millions)")
-
-plt.title("Diabetes by Income Group (2021)")
-fig.tight_layout()
-plt.show()
-```
+> To regenerate this figure, run `python scripts/make_all_figures.py`.
 
 ### Takeaway for Health Professionals: For health professionals, this means that tackling diabetes is a critical issue for global health equity. If you work in or with LMICs, be aware that diabetes services need rapid scaling up – from community education to primary care management – despite limited resources. Even in high-income settings, clinicians should understand the cultural and socioeconomic factors when managing patients from LMIC backgrounds. Overall, advocating for stronger health systems and access to care in low-resource settings is essential, because that’s where the diabetes battle will largely be won or lost.
 
@@ -248,32 +152,11 @@ Explanation: Diabetes is not evenly distributed – some regions and countries f
 | Western Pacific | ~11% (China ~10%, Pacific islands higher) | 215 million | Continued rise (varies by country) | IDF 2025 |
 | Africa | ~5.0% (lowest) | 25 million | +142% (to 60 million) (highest % increase) | IDF 2025 |
 
-```python
-import matplotlib.pyplot as plt
-import numpy as np
+### 📊 Figure 7
 
-# Data from Table 7: Diabetes by IDF region
-regions = [
-    "MENA", "N. America & Caribbean", "Europe",
-    "S. & Central America", "South-East Asia",
-    "Western Pacific", "Africa"
-]
+![Figure 7](figures/fig7_regions_prevalence.png)
 
-prevalence_percent = [17.6, 13.0, 9.8, 9.5, 11.0, 11.0, 5.0]
-adults_millions = [85, 56, 66, 35, 107, 215, 25]
-
-x = np.arange(len(regions))
-
-fig, ax1 = plt.subplots()
-ax1.bar(x, prevalence_percent)
-ax1.set_xticks(x)
-ax1.set_xticklabels(regions, rotation=45, ha="right")
-ax1.set_ylabel("Prevalence (% of adults)")
-ax1.set_title("Diabetes Prevalence by Region")
-
-plt.tight_layout()
-plt.show()
-```
+> To regenerate this figure, run `python scripts/make_all_figures.py`.
 
 ### Takeaway for Health Professionals: For health professionals, it’s important to recognize if you work in or with a “hotspot” region – places like the Middle East, North Africa, and parts of Asia have extremely high diabetes rates, requiring extra vigilance in screening and prevention. Tailor your interventions to local context: for instance, in MENA countries, focus on culturally appropriate diet modifications and managing Ramadan fasting in diabetics; in the Pacific, community-based lifestyle programs might help. Even outside those regions, understanding these patterns can guide you in risk assessment – e.g. patients from South Asian or Middle Eastern backgrounds might have higher risk at lower BMIs, so you might screen them earlier for diabetes.
 
@@ -291,27 +174,11 @@ Explanation: Diabetes isn’t only about chronic morbidity; it is also a major k
 | % of diabetes deaths under age 70 | 47% (global, 2021) | WHO Fact Sheet 2024 |
 | Diabetes rank among causes of death | #8 worldwide in 2021 (top 10 cause) | WHO (Top 10 Causes report) |
 
-```python
-import matplotlib.pyplot as plt
+### 📊 Figure 8
 
-# Data from Table 8: Diabetes-related mortality
-categories = [
-    "Deaths attributable to diabetes (2024)",
-    "Direct diabetes deaths (2021)",
-    "Deaths incl. diabetic kidney disease (2021)"
-]
+![Figure 8](figures/fig8_mortality.png)
 
-deaths_millions = [3.4, 1.6, 2.0]
-
-fig, ax = plt.subplots()
-ax.bar(categories, deaths_millions)
-ax.set_ylabel("Deaths (millions)")
-ax.set_title("Diabetes-Related Mortality (Approximate)")
-ax.tick_params(axis="x", rotation=45)
-
-plt.tight_layout()
-plt.show()
-```
+> To regenerate this figure, run `python scripts/make_all_figures.py`.
 
 ### Takeaway for Health Professionals: For health professionals, these mortality figures are a wake-up call – diabetes isn’t just about managing blood sugar, it’s about preventing deaths on a large scale. Every time you help a patient control their diabetes or prevent one from developing it, you are potentially saving a life or extending it. This means aggressive management of cardiovascular risk factors in diabetics (blood pressure, cholesterol, smoking cessation) is as important as glycemic control. It also means advocating at the policy level for diabetes prevention and care is literally a matter of life and death for millions.
 
@@ -330,31 +197,11 @@ Explanation: The diabetes epidemic carries an enormous economic cost. In 2024, g
 | Africa’s share of global diabetes spend | ~1% | \$10 billion for 25 million patients | IDF Atlas 2025 (Africa) |
 | U.S. share of global diabetes spend | ~\$400 billion (approx) | U.S. alone ≈ 40% of global spending (due to high costs) | IDF 10th Atlas (2021 est.) |
 
-```python
-import matplotlib.pyplot as plt
-import numpy as np
+### 📊 Figure 9
 
-# Data from Table 9: Economic impact of diabetes (approximate)
-categories = [
-    "Global health expenditure (2024)",
-    "Africa spend",
-    "US spend"
-]
+![Figure 9](figures/fig9_economic.png)
 
-values_billion_usd = [1015, 10, 400]  # billions of USD
-
-x = np.arange(len(categories))
-
-fig, ax = plt.subplots()
-ax.bar(x, values_billion_usd)
-ax.set_xticks(x)
-ax.set_xticklabels(categories, rotation=45, ha="right")
-ax.set_ylabel("Spending (billion USD)")
-ax.set_title("Economic Impact of Diabetes")
-
-plt.tight_layout()
-plt.show()
-```
+> To regenerate this figure, run `python scripts/make_all_figures.py`.
 
 ### Takeaway for Health Professionals: For health professionals, the cost data highlights that diabetes isn’t just a clinical issue – it’s draining healthcare resources at an unprecedented scale. This underscores the importance of cost-effective management: prevention programs, patient education, and primary care management of diabetes can reduce expensive hospital admissions. Clinicians should also be mindful of prescribing cost-effective treatments and advocating for health insurance coverage for diabetes care. On a policy level, making the case for investment in diabetes prevention (like lifestyle intervention programs) can be backed by the argument that it will save money by averting costly complications down the line.
 
@@ -372,26 +219,11 @@ Explanation: Diabetes is not only a lifelong condition – it can also occur dur
 | Share of HIP cases in women under 30 | ~43.5% (nearly half of GDM cases are in women <30) | IDF Atlas 2025 |
 | % of HIP cases in LMICs | >90% (vast majority in developing countries) | IDF 2019 / MNT 2022 data |
 
-```python
-import matplotlib.pyplot as plt
-import numpy as np
+### 📊 Figure 10
 
-# Data from Table 10: Hyperglycemia in pregnancy
-categories = [
-    "Hyperglycemia in pregnancy",
-    "Gestational diabetes only"
-]
+![Figure 10](figures/fig10_hip.png)
 
-prevalence_percent = [20, 17]
-
-fig, ax = plt.subplots()
-ax.bar(categories, prevalence_percent)
-ax.set_ylabel("Prevalence (% of pregnancies)")
-ax.set_title("Hyperglycemia and Gestational Diabetes in Pregnancy")
-
-plt.tight_layout()
-plt.show()
-```
+> To regenerate this figure, run `python scripts/make_all_figures.py`.
 
 ### Takeaway for Health Professionals: For health professionals, this means integrating diabetes screening into antenatal care is critical – one in six pregnancies faces gestational diabetes, so obstetric and primary care providers must be vigilant. For health systems, it’s a reminder that NCD prevention starts early: managing GDM not only ensures safer pregnancies but also can prevent or delay type 2 diabetes in both mother and child. Postpartum follow-up of women with GDM (to support lifestyle changes and regular diabetes screening) should be a standard practice to break the chain of risk across generations.
 
